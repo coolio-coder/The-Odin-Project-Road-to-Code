@@ -1,0 +1,1 @@
+This repo is aimed to show case my journey/road in becoming a software developer through the Odin Project's software developer program. I hope to learn lots so that I can create beautiful things as well.
