@@ -1,0 +1,136 @@
+body {
+    background: black;
+    opacity: 80%;
+  }
+  
+   #header {
+      font-family: Arial; 
+      color: gray;
+      top: 20px;
+      text-align: right;
+      position: relative;
+  }
+    #header-github {
+    background-color: gray;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 20;
+    margin: 5px 20px 15px;
+    position: relative;
+    }
+  
+  .Title {
+      font-family: Arial; 
+      color: White;
+      top: 5x;
+      text-align: center;
+      position: relative;
+      font-size: 44px;
+  }
+  
+  .Instruction {
+      font-family: Arial; 
+      color: White;
+      top: 5x;
+      text-align: center;
+      position: relative;
+      font-size: 20px;
+      margin-top: 20px;
+  }
+  
+  .namePlate {
+      font-family: Arial; 
+      color: White;
+      top: 40px;
+      text-align: center;
+      position: relative;
+      font-size: 20px;
+      margin-top: 20px;
+  }
+  #playerName {
+    position: relative;
+    right: 275px;
+    font-size: 30px;
+  }
+  #computerName {
+    position: relative;
+    left: 275px;
+    font-size: 30px;
+  }
+  
+  .score {
+      font-family: Arial; 
+      color: White;
+      top: 30px;
+      text-align: center;
+      position: relative;
+      font-size: 40px;
+      margin-top: 20px;
+  }
+  #playerScore {
+    position: relative;
+    right: 330px;
+    font-size: 30px;
+  }
+  #computerScore {
+    position: relative;
+    left: 310px;
+    font-size: 30px;
+  }
+  
+  .picFrame {
+      font-family: Arial; 
+      color: White;
+      text-align: center;
+      position: relative;
+      top: 130px;
+      font-size: 100px;
+  }
+  #playerPick {
+    background-color: white;
+    border: 100px solid white;
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    opacity: 110%;
+    right: 219px;
+    position: relative;
+    font-size: 40px;
+    color: black;
+  }
+  #computerPick {
+    background-color: white;
+    color: black;
+    font-size: 40px;
+    border: 100px solid white;
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    opacity: 110%;
+    left: 200px;
+    position: relative;
+  }
+  
+  
+  .choices {
+      font-family: Arial; 
+      color: gray;
+      top: 350px;
+      text-align: center;
+      position: relative;
+      font-size: 100px;
+  }
+  #rock {
+    border: 15px solid gray;
+    border-radius: 50%;
+  }
+  #paper {
+    border: 15px solid white;
+    border-radius: 50%;
+  }
+  #scissors {
+    border: 15px solid red;
+    border-radius: 50%;
+  }
+  
