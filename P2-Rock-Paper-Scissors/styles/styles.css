@@ -82,55 +82,70 @@ body {
   .picFrame {
       font-family: Arial; 
       color: White;
-      text-align: center;
-      position: relative;
-      top: 130px;
+      position: absolute;
+      top: 450px;
+      left: 1040px;
       font-size: 100px;
   }
-  #playerPick {
+  #playerFrame {
     background-color: white;
-    border: 100px solid white;
+    border: 125px solid white;
     border-radius: 50%;
-    height: 100%;
-    width: 100%;
     opacity: 110%;
-    right: 219px;
-    position: relative;
-    font-size: 40px;
+    right: 420px;
+    position: absolute;
     color: black;
+    bottom: -175px;
+  }
+  #computerFrame {
+    background-color: white;
+    border: 125px solid white;
+    border-radius: 50%;
+    opacity: 110%;
+    left: 0px;
+    position: absolute;
+    bottom: -175px;
+  }
+  #playerPick {
+    position: absolute;
+    color: black;
+    right: 490px;
   }
   #computerPick {
-    background-color: white;
+    position: absolute;
     color: black;
-    font-size: 40px;
-    border: 100px solid white;
-    border-radius: 50%;
-    height: 100%;
-    width: 100%;
-    opacity: 110%;
-    left: 200px;
-    position: relative;
+    left: 70px;
   }
   
   
   .choices {
       font-family: Arial; 
-      color: gray;
-      top: 350px;
+      background-color: black;
+      top: 500px;
       text-align: center;
       position: relative;
       font-size: 100px;
   }
   #rock {
-    border: 15px solid gray;
+    border: 10px solid gray;
     border-radius: 50%;
+    font-size: 100px;
+    cursor: pointer;
   }
   #paper {
     border: 15px solid white;
     border-radius: 50%;
+    font-size: 100px;
+    cursor: pointer;
   }
   #scissors {
     border: 15px solid red;
     border-radius: 50%;
+    font-size: 100px;
+    cursor: pointer;
+  }
+  
+  #rock:hover, #paper:hover, #scissors:hover {
+    font-size: 113px;
   }
   
