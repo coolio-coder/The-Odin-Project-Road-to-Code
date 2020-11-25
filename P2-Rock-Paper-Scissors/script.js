@@ -5,10 +5,10 @@ let playerScore, computerScore, playerPick, computerPick, tests, choices;
 
 //Default Settings
 
-// window.addEventListener('load', (event) => {
-//   var playerName = prompt('What is your name', 'name');
-//   document.querySelector('#playerName').textContent = playerName;
-// })
+window.addEventListener('load', (event) => {
+  var playerName = prompt('What is your name', 'name');
+  document.querySelector('#playerName').textContent = playerName;
+})
 
 playerScore = 0;
 computerScore = 0;
@@ -119,11 +119,15 @@ document.body.addEventListener("click", event => {
     }
   } else if (playerScore > computerScore) {
     document.getElementById("announce").innerHTML += 'You Win';
-
+    document.getElementById("rock").disabled = true;
+    document.getElementById("paper").disabled = true;
+    document.getElementById("scissors").disabled = true;
     document.querySelector('body').style.backgroundColor = '#60b347';
   } else if (computerScore > playerScore) {
     document.getElementById("announce").innerHTML += 'You Lose';
-
+    document.getElementById("rock").disabled = true;
+    document.getElementById("paper").disabled = true;
+    document.getElementById("scissors").disabled = true;
     document.querySelector('body').style.backgroundColor = 'red';
   }
 }});
