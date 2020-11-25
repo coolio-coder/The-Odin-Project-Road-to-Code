@@ -1,14 +1,25 @@
+
 //Define all variables
 
-let playerScore, computerScore, playerPick, computerPick; 
+let playerScore, computerScore, playerPick, computerPick, tests, choices; 
 
 //Default Settings
 
-playerScore = document.querySelector('#playerScore').textContent;
-computerScore = document.querySelector('#computerScore').textContent;
+// window.addEventListener('load', (event) => {
+//   var playerName = prompt('What is your name', 'name');
+//   document.querySelector('#playerName').textContent = playerName;
+// })
+
+playerScore = 0;
+computerScore = 0;
 
 playerPick =  document.querySelector('#playerPick').textContent;
 computerPick = document.querySelector('#computerPick').textContent;
+
+var setPlayerPick = document.querySelector('#playerPick');
+var setComputerPick = document.querySelector('#computerPick');
+var setPlayerScore = document.querySelector('#playerScore');
+var setComputerScore = document.querySelector('#computerScore');
 
 //Rules
 tests = {
@@ -29,68 +40,142 @@ tests = {
       }
     }
 
+const comparePicks = function(playerPick, comparePick) {
+  if (tests[playerPick][computerPick] === 'true') {
+    playerScore++;
+    setPlayerScore.textContent = playerScore;
 
-//Pick a value
-  //Rock
-  document.querySelector('#rock').addEventListener('click', function () {
-    //Player Picks a value
-    playerPick = '✊'
-    document.querySelector('#playerPick').textContent = playerPick;
-    //Computer Picks a value
-    choices = ['✊', '✋', '✌️'];
-    computerPick = choices[Math.floor(Math.random()*2)+1];
-    document.querySelector('#computerPick').textContent = computerPick;
+    //Update scoreboard
+    var node = document.createElement("li");
+    var textnode = document.createTextNode('Player: '+playerPick+' - Computer: '+computerPick);
+    node.appendChild(textnode);
+    document.getElementById("scores").appendChild(node);
 
-    //Compare values
-    if (tests[playerPick][computerPick] === 'true') {
-        playerScore++;
-        document.querySelector('#playerScore').textContent = playerScore;
-      } else if (tests[playerPick][computerPick] === 'false') {
-        computerScore++;
-        document.querySelector('#computerScore').textContent = computerScore;
-      }
-  })
+    //Color winner
+    document.querySelector('#scores').style.color = '#00FF00'
+  } else if (tests[playerPick][computerPick] === 'false') {
+    computerScore++;
+    setComputerScore.textContent = computerScore;
 
-  //Paper
-  document.querySelector('#paper').addEventListener('click', function () {
-    //Player Picks a value
-    playerPick = '✋'
-    document.querySelector('#playerPick').textContent = playerPick;
-    //Computer Picks a value
-    choices = ['✊', '✋', '✌️'];
-    computerPick = choices[Math.floor(Math.random()*2)+1];
-    document.querySelector('#computerPick').textContent = computerPick;
+    var node = document.createElement("li");
+    var textnode = document.createTextNode('Player: '+playerPick+' - Computer: '+computerPick);
+    node.appendChild(textnode);
+    document.getElementById("scores").appendChild(node);
 
-    //Compare values
-    if (tests[playerPick][computerPick] === 'true') {
-        playerScore++;
-        document.querySelector('#playerScore').textContent = playerScore;
-      } else if (tests[playerPick][computerPick] === 'false') {
-        computerScore++;
-        document.querySelector('#computerScore').textContent = computerScore;
-      }
-  })
+    document.querySelector('#scores').style.color = '#ffcccb'
+  }
+}
 
-  //Scissor
-  document.querySelector('#scissors').addEventListener('click', function () {
-    //Player Picks a value
-    playerPick = '✌️'
-    document.querySelector('#playerPick').textContent = playerPick;
-    //Computer Picks a value
-    choices = ['✊', '✋', '✌️'];
-    computerPick = choices[Math.floor(Math.random()*2)+1];
-    document.querySelector('#computerPick').textContent = computerPick;
 
-    //Compare values
-    if (tests[playerPick][computerPick] === 'true') {
-        playerScore++;
-        document.querySelector('#playerScore').textContent = playerScore;
-      } else if (tests[playerPick][computerPick] === 'false') {
-        computerScore++;
-        document.querySelector('#computerScore').textContent = computerScore;
-      }
-  })
+document.body.addEventListener("click", event => {
+  if (event.target.nodeName == "BUTTON") {
 
+    if (document.querySelector('#playerScore').textContent < 5 && document.querySelector('#computerScore').textContent < 5) {
+    //ROCK
+    if(event.target.textContent === '✊') {
+      //Player Value
+      playerPick = '✊';
+      setPlayerPick.textContent = playerPick;
+
+      //Computer Picks a value
+      choices = ['✊', '✋', '✌️'];
+      computerPick = choices[Math.floor(Math.random() * 3)];
+      setComputerPick.textContent = computerPick;
+  
+      //Compare values
+      comparePicks(playerPick,computerPick);
+      console.log(playerPick)
+      console.log(computerPick)
+    //PAPER
+    } else if (event.target.textContent === '✋') {
+      //Player Value
+      playerPick = '✋';
+      setPlayerPick.textContent = playerPick;
+
+      //Computer Picks a value
+      choices = ['✊', '✋', '✌️'];
+      computerPick = choices[Math.floor(Math.random() * 3)];
+      setComputerPick.textContent = computerPick;
+  
+      //Compare values
+      comparePicks(playerPick,computerPick);
+      console.log(playerPick)
+      console.log(computerPick)
+    //SCISSOR
+    } else if (event.target.textContent === '✌️') {
+      //Player Value
+      playerPick = '✌️';
+      setPlayerPick.textContent = playerPick;
+
+      //Computer Picks a value
+      choices = ['✊', '✋', '✌️'];
+      computerPick = choices[Math.floor(Math.random() * 3)];
+      setComputerPick.textContent = computerPick;
+  
+      //Compare values
+      comparePicks(playerPick,computerPick);
+      console.log(playerPick)
+      console.log(computerPick)
+    }
+  } else if (playerScore > computerScore) {
+    document.getElementById("announce").innerHTML += 'You Win';
+
+    document.querySelector('body').style.backgroundColor = '#60b347';
+  } else if (computerScore > playerScore) {
+    document.getElementById("announce").innerHTML += 'You Lose';
+
+    document.querySelector('body').style.backgroundColor = 'red';
+  }
+}});
+
+
+/**VERSION 1 */
+
+// //Pick a value
+//   //Rock
+//   document.querySelector('#rock').addEventListener('click', function () {
+//     //Player Picks a value
+//     playerPick = '✊';
+//     setPlayerPick.textContent = playerPick;
+
+//     //Computer Picks a value
+//     choices = ['✊', '✋', '✌️'];
+//     computerPick = choices[Math.floor(Math.random()*3)];
+//     setComputerPick.textContent = computerPick;
+ 
+//     //Compare values
+//     comparePicks(playerPick,computerPick)
+//   })
+
+//   //Paper
+//   document.querySelector('#paper').addEventListener('click', function () {
+//     //Player Picks a value
+//     playerPick = '✋'
+//     setPlayerPick.textContent = playerPick;
+//     //Computer Picks a value
+//     choices = ['✊', '✋', '✌️'];
+//     computerPick = choices[Math.floor(Math.random()*3)];
+//     setComputerPick.textContent = computerPick;
+
+//     //Compare values
+//     comparePicks(playerPick,computerPick)
+//   })
+
+//   //Scissor
+//   document.querySelector('#scissors').addEventListener('click', function () {
+//     //Player Picks a value
+//     playerPick = '✌️'
+//     setPlayerPick.textContent = playerPick;
+//     //Computer Picks a value
+//     choices = ['✊', '✋', '✌️'];
+//     computerPick = choices[Math.floor(Math.random()*3)];
+//     setComputerPick.textContent = computerPick;
+
+//     //Compare values
+//     comparePicks(playerPick,computerPick)
+//   })
+
+  /**INITIAL PSEUDO CODE*/
 
 //document.querySelector('#playerPick').textContent = '?'
 
@@ -148,6 +233,8 @@ tests = {
 //   console.log('You won!')
 // } else {console.log('You Lost!')}
 
+
+/**IDEAS FOR SIMPLIFYING THE CODE*/
 
 // //shortcut
 // document.querySelector('#rock').addEventListener('click', function () {
