@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Monda&display=swap" rel="stylesheet">
+</head>
+<body>
+    <p id='header'>
+        <a id='header-github' href='https://github.com/coolio-coder'>Github</a>
+    </p>
+      <div class='title'><em>
+        Etch-a-Sketch</em>
+      <div>
+      
+      <div id="sidebar">
+        <div class="toggle-btn" onclick="toggleSidebar(this)">
+          <img src='https://i.pinimg.com/originals/92/a8/b2/92a8b221f3f4448b03f08cd607df4f8e.jpg'>
+        </div>  
+        <div class="list">
+          <div class="item">Tile Size</div>
+            <div class="slidecontainer">
+              <input type="range" min="1" max="100" step='2' value='30' type='range' class="slider" id="myRange" onchange="newValue(this.value)">
+                <p class='tileSize'>Size: <p id='demo' value='30'></p></p>
+            </div>
+          <div class="item">Color</div>
+            <button class='item-color' id='black'>Black</button>
+            <button class='item-color' id='gray-scale'>Gray Scale</button>
+            <button class='item-color' id='rainbow'>Rainbow</button>
+            <br>
+            <button class='item-color' id='eraser'>Eraser</button>
+            <button class='item-color' id='rgb'>Choose Your Own</button>
+      <!--     <div class="item" id='backgroundColor'>Background Color</div> -->
+        </div>
+       
+       </div>
+       <div id='container'></div>
+       <script src="scripts.js"></script>
+    </body>
+    
+</html>

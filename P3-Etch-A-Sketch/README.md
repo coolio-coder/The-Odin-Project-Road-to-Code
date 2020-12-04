@@ -1,0 +1,1 @@
+The purpose of this project is to showcase my DOM maanipulation skills. I will be building a browser version of something between a sketchpad and an Etch-A-Sketch.

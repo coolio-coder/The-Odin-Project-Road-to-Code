@@ -1,0 +1,163 @@
+* {
+    box-sizing:border-box;
+    font-family: 'Monda', sans-serif;
+  }
+  
+  /* SideBar */
+  #sidebar {
+    position:absolute;
+    top:0px;
+    left:-300px;
+    width:300px;
+    height:100%;
+    background:#151719;
+    transition:all 300ms linear;
+  }
+  #sidebar.active {
+    left:0px;
+  }
+  #sidebar .toggle-btn {
+    position:absolute;
+    left:320px;
+    top:0px;
+  }
+  #sidebar .toggle-btn img {
+    display:block;
+    width:100px;
+    height:100%;
+    background:#151719;
+    margin: -10px -15px;
+    cursor:pointer;
+    
+  }
+  #sidebar div.list div.item {
+    padding:10px 10px 150px;
+    border-bottom:1px solid #444;
+    color:#fcfcfc;
+    text-transform:uppercase;
+    font-size:20px;
+  }
+  
+  /* Slider */
+  .slidecontainer {
+    width: 90%;
+  }
+  .slider {
+    width: 100%;
+    height: 15px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transititon: .2s;
+    transition: opacity .2s;
+    position: absolute;
+    top: 60px;
+    right: 0px;
+  }
+  .slider:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+  }
+    /*Text Size*/
+    .tileSize {
+    position: absolute;
+    top: 80px;
+    left: 110px;
+    color: white;
+    font-size: 18px;
+  }
+    /*Grid Color*/
+    .item-color {
+      position: relative;
+      float: center;
+      bottom: 170px;
+      
+      color: black;
+      font-size: 15px;
+      padding: 5px;
+      cursor: pointer;
+      text-decoration: none;
+     }
+     #black {
+     color: black;
+     }
+     #gray-scale {
+     color: gray;
+     }
+     #rainbow {
+      background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange,       red);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+     }
+     #eraser {
+      position: relative;
+      bottom: 190px;
+     }
+     #rgb {
+      color: black;
+    
+      position: relative;
+      bottom: 190px;
+     }
+     
+  /* #BackgroundColor {
+    
+  } */
+  
+  /*Title*/
+  .title {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 50px;
+  }
+  
+  /* Github link */
+   #header-github {
+    background-color: gray;
+    opacity: .6;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 5px 20px 15px;
+    position: relative;
+   }
+   #header {
+      font-family: 'Mona', san-serif; 
+      color: gray;
+      top: 20px;
+      text-align: right;
+      position: relative;
+  }
+  
+  /*Grid*/
+.color {
+  background-color: blue;
+  border: 1px solid black;
+}
+:root {
+  --grid-cols: 1;
+  --grid-rows: 1;
+}
+
+#container {
+  margin-top: 25px;
+  margin-right: 40px;
+  display: inline-grid;
+  grid-template-columns: repeat(16, 2fr);
+  grid-template-rows: repeat(16, 2fr);
+  border: 5px solid black;
+  border-radius: 5px;
+  height: 575px;
+  width: 575px;
+}
+
+.grid-item {
+  background-color: white;
+  border: 1px solid black;
+}
