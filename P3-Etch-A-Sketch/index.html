@@ -23,21 +23,23 @@
         <div class="list">
           <div class="item">Tile Size</div>
             <div class="slidecontainer">
-              <input type="range" min="1" max="100" step='2' value='30' type='range' class="slider" id="myRange" onchange="newValue(this.value)">
-                <p class='tileSize'>Size: <p id='demo' value='30'></p></p>
+              <input type="range" min="1" max="69" step='1' value='16' type='range' class="slider" id="myRange" onchange="newValue()">
+                <p class='tileSize'>Size: <span id='demo'></span><sup>2</sup></p>
             </div>
           <div class="item">Color</div>
-            <button class='item-color' id='black'>Black</button>
-            <button class='item-color' id='gray-scale'>Gray Scale</button>
-            <button class='item-color' id='rainbow'>Rainbow</button>
+            <button class='black'>Black</button>
+            <button class='gray'>Gray</button>
+            <button class='rainbow'>Rainbow</button>
             <br>
-            <button class='item-color' id='eraser'>Eraser</button>
-            <button class='item-color' id='rgb'>Choose Your Own</button>
+            <button class='blue'>Blue</button>
+            <button class='red'>Red</button>
+            <button class='eraser'>Eraser</button>
       <!--     <div class="item" id='backgroundColor'>Background Color</div> -->
         </div>
        
        </div>
        <div id='container'></div>
+       <div class='reset'>Reset Grid</div>
        <script src="scripts.js"></script>
     </body>
     
