@@ -60,12 +60,13 @@ body{
 }
 
 
+
 .calcBody{
     position: relative;
-    width: 500px;
+    width: 450px;
     height: 650px;
-    top: calc(50% - 650px);
-    left: calc(50% - 240px);
+    top: calc(50% - 600px);
+    left: calc(50% - 220px);
     background: inherit;
     border-radius: 5px;
     overflow: hidden;
@@ -74,7 +75,7 @@ body{
   .calcBody:after{
     content: '';
     width: 650px;
-    height: 650px;
+    height: 900px;
     background: inherit; 
     position: absolute;
     left: -25px;
@@ -92,32 +93,66 @@ body{
     margin-top: 50px;
     text-align: center;
     z-index: 1;
+
+    
   }
   .calcInput > *{
     display: inline-block;
     width: 200px;
   }
 
-  .answer {
-    width: 120px;
-    height: 18px;
-    opacity: 0.4;
-    border-radius: 2px;
-    padding: 5px 15px;
-    border: 0;
-  }
-  
-  .user-name{
-    margin-top: 15px;
-    margin-bottom: 15px;
-    color: white;
-  }
-
-button.numbers {
-    width: 70px;
+.answer {
+    width: 400px;
     height: 70px;
     opacity: 0.35;
-    padding: 5px 15px;
+    margin: 5px;
+    bottom: 15px;
+    padding-bottom: 5px;
+    padding-right: 5px;
     border: 0;
-    font-size: 30px;
+    font-size: 40px;
+    position: relative;
+    text-align: right;
+
+    background-color: whitesmoke;
+  }
+
+button {
+  border-radius: 5px;
+}
+
+button.reset {
+  width: 90px;
+  height: 90px;
+  opacity: 0.35;
+  margin: 5px;
+  border: 0;
+  font-size: 40px;
+}
+
+button.operations {
+  width: 90px;
+  height: 90px;
+  opacity: 0.35;
+  margin: 5px;
+  border: 0;
+  font-size: 40px;
+}
+
+button.numbers {
+    width: 90px;
+    height: 90px;
+    opacity: 0.35;
+    margin: 5px;
+    border: 0;
+    font-size: 40px;
+}
+
+#zero {
+  width: 194px;
+  height: 90px;
+  opacity: 0.35;
+  margin: 5px;
+  border: 0;
+  font-size: 40px;
 }
