@@ -94,7 +94,6 @@ body{
     text-align: center;
     z-index: 1;
 
-    
   }
   .calcInput > *{
     display: inline-block;
@@ -102,7 +101,7 @@ body{
   }
 
 .answer {
-    width: 400px;
+    width: 405px;
     height: 70px;
     opacity: 0.35;
     margin: 5px;
@@ -113,12 +112,20 @@ body{
     font-size: 40px;
     position: relative;
     text-align: right;
+    border-radius: 5px;
 
     background-color: whitesmoke;
   }
 
 button {
   border-radius: 5px;
+  cursor: pointer;
+  width: 90px;
+  height: 90px;
+  opacity: 0.35;
+  margin: 5px;
+  border: 0;
+  font-size: 40px;
 }
 
 button.reset {
