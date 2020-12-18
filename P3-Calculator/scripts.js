@@ -3,23 +3,53 @@
 //State the constants
 const calInput = document.querySelectorAll('button');
 
+let displayVal = [];
+let answer = 0;
+let mathVal = [];
+let ops = [];
 
+
+//First Input a value
 let inputNum = n => {
-    console.log('numbers.query')
-    let input = document.querySelectorAll('n');
-    console.log(input.textContent)
+    let tempNum = n.target.id.toString('');
+    displayVal.push(tempNum)
+    answer = displayVal.join('')
+    document.querySelector('.answer').textContent = answer;
+    console.log(answer)
 }
 
-let test = () => {
-    console.log('hello world')
-}
-
-const operations = () => {
-    console.log('operations')
+const operations = o => {
+    
+    if (mathVal.length === 0 ) {
+        mathVal.push(answer)
+        if (ops.length === 0){
+        ops.push(o.target.id.toString(''));
+        console.log(ops);
+        } else {
+            ops.shift();
+            ops.push.o.target.id;
+            console.log(ops)
+        }
+    } else {
+        console.log(mathVal.leng)
+        if (ops.length === 0){
+            ops.push(o.target.id.toString(''));
+            console.log(ops);
+            } else {
+                ops.shift();
+                ops.push(o.target.id);
+                console.log(ops)
+            }
+    }
 }
 
 const reset = () => {
+    displayVal = [];
     console.log('reset');
+}
+
+const displayAnswer = () => {
+     
 }
 
 //Evaluate the button for each 

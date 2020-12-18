@@ -52,7 +52,7 @@ body{
 }
 #header {
       font-family: 'Mona', san-serif; 
-      opacity: .5;
+      opacity: .7;
       color: gray;
       top: 60px;
       text-align: right;
@@ -155,7 +155,7 @@ button.numbers {
     font-size: 40px;
 }
 
-#zero {
+#1 {
   width: 194px;
   height: 90px;
   opacity: 0.35;
