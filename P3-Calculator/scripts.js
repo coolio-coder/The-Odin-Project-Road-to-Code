@@ -71,12 +71,10 @@ const equal = () => {
             console.log(firstVal[0]);
         }
     } else {
-        console.log(firstVal.length);
-        console.log(secondVal.length);
+        console.log(firstVal[0])
+        console.log(parseInt(secondVal[0]))
         if(ops.length,firstVal.length,secondVal.length === 1) {
-            console.log(parseInt(firstVal[0]))
-            console.log(parseInt(secondVal[0]))
-            var finalAnswer = operation[ops](parseInt(firstVal[0]), parseInt(secondVal[0]));
+            var finalAnswer = operation[ops](firstVal[0], parseInt(secondVal[0]));
             console.log(finalAnswer)
             document.querySelector('.answer').textContent = finalAnswer;
 
