@@ -29,7 +29,7 @@ body{
 .title {
     position: relative;
     text-align: center;
-    font-size: 50px;
+    font-size: 90px;
     color: whitesmoke;
 }
 
@@ -54,7 +54,7 @@ body{
       font-family: 'Mona', san-serif; 
       opacity: .7;
       color: gray;
-      top: 60px;
+      top: 55px;
       text-align: right;
       position: relative;
 }
@@ -65,7 +65,7 @@ body{
     position: relative;
     width: 450px;
     height: 650px;
-    top: calc(50% - 600px);
+    top: calc(50% - 500px);
     left: calc(50% - 220px);
     background: inherit;
     border-radius: 5px;
