@@ -113,6 +113,7 @@ body{
     position: relative;
     text-align: right;
     border-radius: 5px;
+    overflow: hidden;
 
     background-color: whitesmoke;
   }
@@ -128,25 +129,7 @@ button {
   font-size: 40px;
 }
 
-button.ACreset {
-  width: 90px;
-  height: 90px;
-  opacity: 0.35;
-  margin: 5px;
-  border: 0;
-  font-size: 40px;
-}
-
-button.operations {
-  width: 90px;
-  height: 90px;
-  opacity: 0.35;
-  margin: 5px;
-  border: 0;
-  font-size: 40px;
-}
-
-button.numbers {
+button.numbers, button.addFloat, button.operations, button.ACreset, button.percent, button.negative {
     width: 90px;
     height: 90px;
     opacity: 0.35;
@@ -155,7 +138,7 @@ button.numbers {
     font-size: 40px;
 }
 
-#1 {
+button.equal {
   width: 194px;
   height: 90px;
   opacity: 0.35;
