@@ -15,7 +15,6 @@ const operation = {
     '-' : function(a,b) {return a - b;},
     '*' : function(a,b) {return a * b;},
     '÷' : function(a,b) {return a / b;},
-    'negative' : function(a) {return -a;},
 }
 
 //First Input a value
@@ -28,7 +27,7 @@ let inputNum = n => {
     document.querySelector('.answer').textContent = answer;
     console.log(answer)
     }
-    //If there is no first mathVal (a), then we will create one
+    //If there is no firstVal (a), then we will create one
     else {
     tempNum = n.target.id.toString('');
     displayVal.push(tempNum);
@@ -44,15 +43,27 @@ const symbol = o => {
         ops.push(o.target.id.toString(''));
         reset();
         console.log(ops);
-    } else {
-        if (ops.length === 0){
-            ops.push(o.target.id.toString(''));
-            console.log(ops);
-            } else {
-                ops.shift();
-                ops.push(o.target.id);
-                console.log(ops)
-            }
+    } else if (firstVal.length === 1) {
+        secondVal.push(answer);
+
+        var finalAnswer = operation[ops](parseFloat(firstVal[0]), parseFloat(secondVal[0]));
+        console.log(finalAnswer)
+        document.querySelector('.answer').textContent = finalAnswer;
+
+        //Reset firstValue and ops then push this answer to the first val of mathVal to be the first answer.
+        firstVal = [];
+        firstVal.push(finalAnswer);
+        secondVal = [];
+        reset();
+    }
+    else {if (ops.length === 0){
+        ops.push(o.target.id.toString(''));
+        console.log(ops);
+        } else {
+            ops.shift();
+            ops.push(o.target.id);
+            console.log(ops)
+        }
     }
 }
 
@@ -61,20 +72,17 @@ const equal = () => {
     secondVal.push(answer);
         if(ops.length,firstVal.length,secondVal.length === 1) {
             console.log(ops)
-            var finalAnswer = operation[ops](parseInt(firstVal[0]), parseInt(secondVal[0]));
+            var finalAnswer = operation[ops](parseFloat(firstVal[0]), parseFloat(secondVal[0]));
             console.log(finalAnswer)
             document.querySelector('.answer').textContent = finalAnswer;
 
             //Reset firstValue and ops then push this answer to the first val of mathVal to be the first answer.
             firstVal = [];
-            firstVal.push(finalAnswer);
-            console.log(firstVal[0]);
+            firstVal.push(finalAnswer); 
         }
     } else {
-        console.log(firstVal[0])
-        console.log(parseInt(secondVal[0]))
         if(ops.length,firstVal.length,secondVal.length === 1) {
-            var finalAnswer = operation[ops](firstVal[0], parseInt(secondVal[0]));
+            var finalAnswer = operation[ops](firstVal[0], parseFloat(secondVal[0]));
             console.log(finalAnswer)
             document.querySelector('.answer').textContent = finalAnswer;
 
