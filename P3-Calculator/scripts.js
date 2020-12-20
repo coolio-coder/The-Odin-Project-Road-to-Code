@@ -184,13 +184,13 @@ const backspace = () => {
 }}
 
 document.addEventListener('keydown', function (e) {
-    if(e.key >= 1 || e.key <= 9) {inputNum(e.key)}
+    if(e.keyCode == 67) {ACreset();}
+    else if(e.key >= 1 || e.key <= 9) {inputNum(e.key)}
     else if(e.key == 'Backspace') {backspace()}
     else if(e.key == '+' || e.key == '-' || e.key == '*' || e.key == '/') {symbol(e.key)}
     else if(e.keyCode == '54') {symbol('exp')}
     else if(e.key == '.') {addFloat(e.key)}
     else if(e.key == '%') {percent(e.key)}
-    else if(e.key == 'c') {ACreset(e.key)}
     else if(e.key == '=' || e.key == 'Enter') {equal(e.key)}
 })
 
