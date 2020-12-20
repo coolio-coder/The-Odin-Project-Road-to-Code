@@ -129,7 +129,7 @@ button {
   font-size: 40px;
 }
 
-button.numbers, button.addFloat, button.operations, button.ACreset, button.percent, button.negative {
+button.addFloat, button.ACreset, button.percent, button.negative,button.equal {
     width: 90px;
     height: 90px;
     opacity: 0.35;
@@ -138,11 +138,35 @@ button.numbers, button.addFloat, button.operations, button.ACreset, button.perce
     font-size: 40px;
 }
 
-button.equal {
-  width: 194px;
+#exp {
+  width: 90px;
   height: 90px;
   opacity: 0.35;
   margin: 5px;
   border: 0;
   font-size: 40px;
+  position: relative;
+  top: 3px;
+}
+
+button.operations, button.percent {
+  width: 90px;
+  height: 90px;
+  opacity: 0.35;
+  margin: 5px;
+  border: 0;
+  font-size: 40px;
+
+  color: 	rgb(139,0,139);
+}
+
+button.numbers {
+  width: 90px;
+  height: 90px;
+  opacity: 0.35;
+  margin: 5px;
+  border: 0;
+  font-size: 40px;
+
+  color: red;
 }

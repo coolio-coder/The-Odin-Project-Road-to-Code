@@ -37,6 +37,7 @@ const operation = {
     '-' : function(a,b) {return a - b;},
     '*' : function(a,b) {return a * b;},
     '/' : function(a,b) {return b === 0 ? 'undefined' : a / b;},
+    'exp' : function(a,b) {return a ** b;}
 }
 
 //First Input a value
@@ -54,7 +55,6 @@ let inputNum = n => {
             displayVal.push(tempNum);
             answer = displayVal.join('');
             document.querySelector('.answer').textContent = answer;
-            console.log(answer)
         }
     }
     //If there is no firstVal (a), then we will create one
@@ -64,15 +64,12 @@ let inputNum = n => {
             displayVal.push(tempNum);
             answer = displayVal.join('');
             document.querySelector('.answer').textContent = answer;
-            console.log(answer)
-            console.log(displayVal)
         } else {
             numBindTest(n)
             displayVal = [answer];
             displayVal.push(tempNum);
             answer = displayVal.join('');
             document.querySelector('.answer').textContent = answer;
-            console.log(answer)
         }
     }
 }
@@ -83,7 +80,7 @@ const symbol = o => {
         firstVal.push(answer)
         opsBindTest(o)
         reset();
-        console.log(o);
+        console.log(ops);
     } else if (firstVal.length === 1 && ops.length === 1) {
         //If there is a second value, i.e. after pressing equal, then we want to remove the second value and change the operation
         if (secondVal.length === 1) {
@@ -172,31 +169,32 @@ const negative = () => {
         document.querySelector('.answer').textContent = answer;
 }
 const backspace = () => {
-    var tempDel = answer.split('').slice(0,-1);
-    answer = tempDel.join('');
-    displayVal = tempDel;
-    if (displayVal.length == 0) {
-        console.log(displayVal.length)
-        document.querySelector('.answer').textContent = '0';
-        console.log(document.querySelector('.answer').textContent)
-    } else {  
-    document.querySelector('.answer').textContent = answer;
-}
-}
+    if (answer != 0) {
+        var tempDel = answer.split('').slice(0,-1);
+        answer = tempDel.join('');
+        displayVal = tempDel;
+        if (displayVal.length == 0) {
+            console.log(displayVal.length)
+            document.querySelector('.answer').textContent = '0';
+            console.log(document.querySelector('.answer').textContent)
+        } else {  
+        document.querySelector('.answer').textContent = answer;
+        }
+    } else {
+}}
 
 document.addEventListener('keydown', function (e) {
     if(e.key >= 1 || e.key <= 9) {inputNum(e.key)}
     else if(e.key == 'Backspace') {backspace()}
     else if(e.key == '+' || e.key == '-' || e.key == '*' || e.key == '/') {symbol(e.key)}
+    else if(e.keyCode == '54') {symbol('exp')}
     else if(e.key == '.') {addFloat(e.key)}
     else if(e.key == '%') {percent(e.key)}
     else if(e.key == 'c') {ACreset(e.key)}
     else if(e.key == '=' || e.key == 'Enter') {equal(e.key)}
-    
 })
-// document.addEventListener('keydown', function(e) {
-//     if(e.key == 'Backspace') {backspace()}
-// })
+
+
 //Evaluate the button for each
 calInput.forEach(function(e) {
     if(e.className === 'numbers') {e.addEventListener('click',inputNum);}
