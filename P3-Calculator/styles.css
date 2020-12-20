@@ -65,7 +65,7 @@ body{
     position: relative;
     width: 450px;
     height: 650px;
-    top: calc(50% - 500px);
+    top: calc(50% - 470px);
     left: calc(50% - 220px);
     background: inherit;
     border-radius: 5px;

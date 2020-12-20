@@ -30,11 +30,9 @@ let inputNum = n => {
         if(isFloat(answer) === false) {
             //If there is an (a), we will need a (b) for our second var. Thus we set the answer to 0 and reset the display
             tempNum = n.target.id.toString('');
-            console.log(displayVal)
             displayVal.push(tempNum);
             answer = displayVal.join('');
             document.querySelector('.answer').textContent = parseInt(answer);
-            console.log(answer)
         } else {
             tempNum = n.target.id.toString('');
             displayVal = [answer];
@@ -77,19 +75,19 @@ const symbol = o => {
             ops.push(o.target.id);
             reset();
         } else if (secondVal.length === 0) {
-            ops.shift();
-            ops.push(o.target.id);
-            console.log(answer)
-            console.log(ops)
-            secondVal.push(answer);
-            var finalAnswer = operation[ops](parseFloat(firstVal[0]), parseFloat(secondVal[0]));
-            console.log(finalAnswer)
-            document.querySelector('.answer').textContent = finalAnswer;
-            //Reset firstValue and ops then push this answer to the first val of mathVal to be the first answer.
-            firstVal = [];
-            firstVal.push(finalAnswer);
-            secondVal = [];
-            reset();
+            if (displayVal.length === 0) {
+                ops.shift();
+                ops.push(o.target.id);
+            } else {
+                secondVal.push(answer);
+                var finalAnswer = operation[ops](parseFloat(firstVal[0]), parseFloat(secondVal[0]));
+                console.log(finalAnswer)
+                document.querySelector('.answer').textContent = finalAnswer;
+                //Reset firstValue and ops then push this answer to the first val of mathVal to be the first answer.
+                firstVal = [];
+                firstVal.push(finalAnswer);
+                secondVal = [];
+                reset();}
         }
     }
     else {if (ops.length === 0){
